@@ -1,0 +1,26 @@
+/* src/styles/animate.css */
+/* 基础动画元素样式：初始状态 */
+.animate-item {
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 不同动画类型的初始位移 */
+.fade-in { /* 纯渐入：无位移 */
+  transform: none;
+}
+.slide-up { /* 上滑入：初始向下位移50px */
+  transform: translateY(50px);
+}
+.slide-left { /* 左滑入：初始向右位移50px */
+  transform: translateX(50px);
+}
+.slide-right { /* 右滑入：初始向左位移50px */
+  transform: translateX(-50px);
+}
+
+/* 激活状态：进入视口后触发 */
+.animate-active {
+  opacity: 1;
+  transform: translate(0);
+}

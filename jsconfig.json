@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "ESNext", // 适配现代浏览器（Vue3 推荐），替代原ES5（纯JS无需兼容老旧浏览器）
+    "module": "ESNext", // 支持 Vue3 常用的 ES 模块语法（import/export）
+    "moduleResolution": "Node", // 纯JS项目用Node解析策略，兼容npm依赖和相对路径
+    "baseUrl": "./", // 路径别名的基础目录（项目根目录）
+    "paths": {
+      "@/*": ["src/*"] // Vue3 标配：@ 映射 src 目录，简化路径导入
+    },
+    "jsx": "preserve", // 兼容 Vue3 JSX 写法（交给 Vue 编译器处理）
+    "lib": ["ES2020", "DOM", "DOM.Iterable"], // 支持现代ES语法和DOM API，精简无用库
+    "allowJs": true, // 允许解析JS文件（纯JS项目必开）
+    "checkJs": false, // 关闭JS类型检查（纯JS项目无需，避免编辑器冗余提示）
+    "resolveJsonModule": true, // 支持导入JSON文件（如配置文件、package.json）
+    "sourceMap": true, // 生成sourceMap，方便开发调试
+    "noEmit": true // 只做代码解析（提示/路径），不生成编译文件（构建交给Vite/Webpack）
+  },
+  "include": [
+    "src/**/*", // 解析src下所有文件（核心）
+    "vite.config.js", // 包含构建配置文件（如webpack.config.js）
+    "*.config.js" // 包含项目根目录的所有配置文件
+  ],
+  "exclude": [
+    "node_modules", // 排除node_modules（无需解析第三方依赖）
+    "dist", // 排除打包后的目录
+    "build", // 排除构建产物目录
+    "**/node_modules/*" // 兜底排除所有node_modules
+  ]
+}

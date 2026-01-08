@@ -1,0 +1,68 @@
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100%;
+  min-width: 100vw;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  transition: all 0.3s ease; // 全局过渡动画
+
+  font-family:Inter, 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
+  'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+}
+
+:root {
+   // 背景色
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-tertiary: #e9ecef;
+  // 文字色
+  --text-primary: #212529;
+  --text-secondary: #495057;
+  --text-tertiary: #6c757d;
+  // 边框色
+  --border-primary: #dee2e6;
+  --border-secondary: #ced4da;
+  // 主色调（适配Element Plus primary）
+  --el-color-primary: #409eff;
+  --el-color-primary-light-9: #e8f4ff;
+}
+
+html.dark {
+  // 背景色
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #242424;
+  --bg-tertiary: #303030;
+  // 文字色
+  --text-primary: #e9ecef;
+  --text-secondary: #dee2e6;
+  --text-tertiary: #adb5bd;
+  // 边框色
+  --border-primary: #343a40;
+  --border-secondary: #495057;
+  // 主色调（Element Plus 暗黑适配）
+  --el-color-primary: #53a8ff;
+  --el-color-primary-light-9: #1e293b;
+  // Element Plus 暗黑模式基础变量（可选，覆盖组件库样式）
+  --el-bg-color: var(--bg-primary);
+  --el-bg-color-page: var(--bg-secondary);
+  --el-text-color-primary: var(--text-primary);
+  --el-text-color-regular: var(--text-secondary);
+  --el-border-color: var(--border-primary);
+}
+
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+/* 我的按钮禁用样式=-= */
+.permission-disabled {
+  cursor: not-allowed !important;
+  background-color: var(--bg-secondary);
+  border-color: var(--text-primary);
+  color: #999 !important;
+  pointer-events: none; /* 防止点击穿透 */
+}

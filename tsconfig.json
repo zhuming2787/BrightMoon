@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    // 基础兼容：适配Vue3+Vite+现代浏览器
+    "target": "ES2020",        // 比ESNext更稳定，兼容所有现代浏览器
+    "module": "ESNext",        // 支持Vue3的ES模块语法（import/export）
+    "moduleResolution": "Node",// 关键：让TS和JS用相同的模块解析规则，避免导出格式不兼容
+    "useDefineForClassFields": true, // Vue3推荐配置，兼容类式组件
+    
+    // TS/JS混合核心：避免类型检查干扰
+    "strict": false,           // 关闭TS严格模式，避免JS文件报类型错
+    "allowJs": true,           // 允许解析JS文件（核心：TS/JS共存）
+    "checkJs": false,          // 显式关闭JS文件的类型检查（纯JS项目必开，避免编辑器冗余提示）
+    
+    // 路径与构建：适配Vite
+    "baseUrl": ".",            // 路径别名基础目录
+    "paths": {
+      "@/*": ["src/*"]         // 和Vite的路径别名完全一致，避免导入路径错
+    },
+    "noEmit": true,            // 关键：让Vite全权编译，TS只做类型检查，避免编译冲突
+    "sourceMap": true,         // 生成sourceMap，方便调试
+    
+    // 语法支持：精简且够用
+    "jsx": "preserve",         // 兼容Vue3 JSX写法
+    "lib": ["ES2020", "DOM", "DOM.Iterable"], // 支持现代ES语法和DOM API
+    "resolveJsonModule": true, // 支持导入JSON文件
+    "isolatedModules": true,   // 强制每个文件是模块，避免全局变量污染
+    "esModuleInterop": true,   // 兼容CommonJS模块（比如第三方JS依赖）
+    "skipLibCheck": true,      // 跳过第三方库的类型检查，提升编译速度
+    "declaration": false       // 不生成.d.ts类型文件，避免干扰JS导入
+  },
+  "include": [
+    "src/**/*",                // 覆盖src下所有TS/JS/Vue文件（简洁）
+    "vite.config.js",          // 包含Vite配置文件
+    "src/stores/cacheStore.ts" // 显式包含TS版cacheStore，确保解析不遗漏
+  ],
+  "exclude": [
+    "node_modules",            // 排除第三方依赖
+    "dist", "build",           // 排除打包产物，避免解析旧代码
+    "node_modules/.vite"       // 排除Vite缓存目录，避免缓存干扰
+  ]
+}
