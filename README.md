@@ -44,21 +44,16 @@ npm run build
 
 ## 贡献步骤
 
-### 1、提Issue：在 Issues 中提出需求 / 问题，确认开发方向
-
-### 2、Fork 仓库：点击右上角 Fork 到自己的账号
-
-### 3、创建分支：基于 main 分支创建，命名规则：feat/功能名/fix/BUG名/docs/文档名
-
-### 4、提交 PR：完成开发后，向本仓库 main 分支提交 Pull Request，附修改说明
+1、提Issue：在 Issues 中提出需求 / 问题，确认开发方向
+2、Fork 仓库：点击右上角 Fork 到自己的账号
+3、创建分支：基于 main 分支创建，命名规则：feat/功能名/fix/BUG名/docs/文档名
+4、提交 PR：完成开发后，向本仓库 main 分支提交 Pull Request，附修改说明
 
 ## 规范要求
 
-### 1、Commit 格式：type(scope): description，例：feat(comment): 新增评论点赞动效
-
-### 2、代码风格：遵循 ESLint+Prettier 配置，提交前会自动检测ESLint规范
-
-### 3、文档同步：修改功能 / 配置后，同步更新 README.md 或相关说明
+1、Commit 格式：type(scope): description，例：feat(comment): 新增评论点赞动效
+2、代码风格：遵循 ESLint+Prettier 配置，提交前会自动检测ESLint规范
+3、文档同步：修改功能 / 配置后，同步更新 README.md 或相关说明
 
 # 📄 开源协议
 
